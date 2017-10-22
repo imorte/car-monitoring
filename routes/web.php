@@ -17,3 +17,7 @@ Route::get('/', function () {
 
 
 Route::get('/start', 'DromController@parse');
+
+Route::get('/hook', 'TelegramController@hook');
+Route::get('/set', 'TelegramController@set');
+Route::get('/unset', 'TelegramController@unset');

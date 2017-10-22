@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+
+use App\Core\Telegramify;
 
 class DromController extends Controller
 {
-    public function parse() {
-        return 'hello';
+    use Telegramify;
+
+    public function parse()
+    {
+
     }
 }
