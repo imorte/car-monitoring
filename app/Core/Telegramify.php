@@ -23,7 +23,7 @@ trait Telegramify
         new Telegram($bot_api_key, $bot_username);
 
         foreach($data as $auto) {
-            if($auto['notified'] == 1)
+            if($auto['notified'] == 1 || $auto['drive'] != '4WD')
                 continue;
 
             $data = [

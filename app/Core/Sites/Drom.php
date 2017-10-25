@@ -102,7 +102,8 @@ class Drom extends Parser
 
     public function handle()
     {
-        $data = $this->doParse();
+        $drom = new self('Mitsubishi', 'Lancer');
+        $data = $drom->doParse();
         $this->store($data);
         $this->notify();
     }
