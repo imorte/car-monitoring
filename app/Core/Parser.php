@@ -8,6 +8,7 @@
 
 namespace App\Core;
 
-abstract class Parser {
+abstract class Parser
+{
 
 }
