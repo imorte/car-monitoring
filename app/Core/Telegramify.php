@@ -10,6 +10,7 @@ namespace App\Core;
 
 use App\Chat;
 use App\Car;
+use Illuminate\Support\Facades\Storage;
 use Longman\TelegramBot\Request as tRequest;
 use Longman\TelegramBot\Telegram;
 
@@ -26,7 +27,10 @@ trait Telegramify
             $year = 0;
             preg_match('/[0-9]{4}/', $auto['name'], $year);
 
-            if($auto['notified'] == 1 || $auto['drive'] != '4WD' || $year < 2008)
+            Storage::disk('local')
+                ->put('year.txt', $year);
+
+            if($auto['notified'] == 1 || $auto['drive'] != '4WD')
                 continue;
 
             $data = [
