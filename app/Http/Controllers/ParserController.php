@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Core\Sites;
+
+use App\Core\InitParse;
 
 class ParserController extends Controller
 {
     public function parse()
     {
-        (new Sites\Drom('Mitsubishi', 'Lancer'))->handle();
+        InitParse::parse();
     }
 }

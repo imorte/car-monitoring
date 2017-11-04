@@ -27,9 +27,6 @@ trait Telegramify
             $year = 0;
             preg_match('/[0-9]{4}/', $auto['name'], $year);
 
-            Storage::disk('local')
-                ->put('year.txt', $year);
-
             if($auto['notified'] == 1 || $auto['drive'] != '4WD')
                 continue;
 
